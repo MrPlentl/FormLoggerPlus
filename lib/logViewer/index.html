@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE"/>
+<meta http-equiv="EXPIRES" content="01 Jan 1970 00:00:00 GMT"/>
+<meta http-equiv="PRAGMA" content="NO-CACHE"/>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="jquery.logviewer.js"></script>
+<script type="text/javascript">
+
+function getLog() {
+    $.ajax({
+        url: 'log.html',
+        dataType: 'text',
+        success: function(text) {
+            $("#logcontent").text(text);
+            setTimeout(getLog, 3000); // refresh every 30 seconds
+        }
+    })
+}
+
+getLog();
+</script>
+
+</head>
+
+<body style="width: 100%; font-family: Verdana">
+<h1>Simple log viewer test page</h1>
+<div>Shows file content in a web browes it is very useful for watching a live logs without to load entire file.
+Log viewer needs real web server to operate. It uses ajax to get new file content's WITHOUT to fetch entire file every time.
+This is done with HEAD request to get file's size and if it is bigger from previous one only these new bytes will be fetched from server and apended
+to current log widnow</div>
+<br/>
+Log viewer options:
+<ul style="margin: 0">
+  <li>logUrl - web location of desired file</li>
+  <li>refreshtimeout - refresh interval in ms</li>
+  <li>readBytes - initional amount of bytes to fetch</li>
+  <li>callback - user function to call to modify new content if necessary before it is appended to log window. 
+        This function will receive new content as single argument and must return it</li>
+</ul>
+<br/>
+Live log:<br/>
+<textarea id="logcontent" WRAP="off" style="width: 90%; height: 90%;" autocomplete="off">
+
+</textarea>
+
+
+</body>
+</html>
+
+

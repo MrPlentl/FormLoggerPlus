@@ -1,0 +1,94 @@
+10:39:00 User Agent Values:
+10:39:00    agent_name = Chrome
+10:39:00    agent_version = 54.0.2840.99
+10:39:00    os_type = Windows
+10:39:00    os_name = Windows 10
+10:39:00 No input submitted
+10:39:00 Array Values:
+10:39:00    Web = Brandon
+10:39:00    Boss = Daniel
+10:39:00    Designer = Jessica
+10:39:00    Writer = Sarah
+10:39:00    Designer2 = Anthony
+10:39:00 [WARN] This is a normal Error!
+10:39:00 [SQL Action] Check SQL Logs
+10:39:00 [TRACE]1
+10:39:00 [TRACE]2
+10:39:00 [TRACE]3
+10:39:00 [TRACE]4
+10:39:00 [TRACE]5
+10:39:00 [TRACE]6
+10:39:27 This user clicked a button they were not suppose to.
+10:40:28 User Agent Values:
+10:40:28    agent_name = Chrome
+10:40:28    agent_version = 54.0.2840.99
+10:40:28    os_type = Windows
+10:40:28    os_name = Windows 10
+10:40:28 No input submitted
+10:40:28 Array Values:
+10:40:28    Web = Brandon
+10:40:28    Boss = Daniel
+10:40:28    Designer = Jessica
+10:40:28    Writer = Sarah
+10:40:28    Designer2 = Anthony
+10:40:28 [WARN] This is a normal Error!
+10:40:28 [SQL Action] Check SQL Logs
+10:40:28 [TRACE]1
+10:40:28 [TRACE]2
+10:40:28 [TRACE]3
+10:40:28 [TRACE]4
+10:40:28 [TRACE]5
+10:40:28 [TRACE]6
+10:40:34 This user clicked a button they were not suppose to.
+10:40:35 This user clicked a button they were not suppose to.
+10:40:36 This user clicked a button they were not suppose to.
+10:40:37 User Agent Values:
+10:40:37    agent_name = Chrome
+10:40:37    agent_version = 54.0.2840.99
+10:40:37    os_type = Windows
+10:40:37    os_name = Windows 10
+10:40:37 POST Values:
+10:40:37    fName = 
+10:40:37    X_test_text = 
+10:40:37    CCnum = ****
+10:40:37    countries = Aruba
+10:40:37    submit = submit
+10:40:37 Array Values:
+10:40:37    Web = Brandon
+10:40:37    Boss = Daniel
+10:40:37    Designer = Jessica
+10:40:37    Writer = Sarah
+10:40:37    Designer2 = Anthony
+10:40:37 [WARN] This is a normal Error!
+10:40:37 [SQL Action] Check SQL Logs
+10:40:37 [TRACE]1
+10:40:37 [TRACE]2
+10:40:37 [TRACE]3
+10:40:37 [TRACE]4
+10:40:37 [TRACE]5
+10:40:37 [TRACE]6
+10:40:37 User Agent Values:
+10:40:37    agent_name = Chrome
+10:40:37    agent_version = 54.0.2840.99
+10:40:37    os_type = Windows
+10:40:37    os_name = Windows 10
+10:40:37 POST Values:
+10:40:37    fName = 
+10:40:37    X_test_text = 
+10:40:37    CCnum = ****
+10:40:37    countries = Aruba
+10:40:37    submit = submit
+10:40:37 Array Values:
+10:40:37    Web = Brandon
+10:40:37    Boss = Daniel
+10:40:37    Designer = Jessica
+10:40:37    Writer = Sarah
+10:40:37    Designer2 = Anthony
+10:40:37 [WARN] This is a normal Error!
+10:40:37 [SQL Action] Check SQL Logs
+10:40:37 [TRACE]1
+10:40:37 [TRACE]2
+10:40:37 [TRACE]3
+10:40:37 [TRACE]4
+10:40:37 [TRACE]5
+10:40:37 [TRACE]6

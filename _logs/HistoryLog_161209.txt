@@ -1,0 +1,70 @@
+10:39:00 [127.0.0.1] User Agent Values:
+10:39:00 [127.0.0.1]    agent_name = Chrome
+10:39:00 [127.0.0.1]    agent_version = 54.0.2840.99
+10:39:00 [127.0.0.1]    os_type = Windows
+10:39:00 [127.0.0.1]    os_name = Windows 10
+10:39:00 [127.0.0.1] No input submitted
+10:39:00 [127.0.0.1] Array Values:
+10:39:00 [127.0.0.1]    Web = Brandon
+10:39:00 [127.0.0.1]    Boss = Daniel
+10:39:00 [127.0.0.1]    Designer = Jessica
+10:39:00 [127.0.0.1]    Writer = Sarah
+10:39:00 [127.0.0.1]    Designer2 = Anthony
+10:39:00 [127.0.0.1] [WARN] This is a normal Error!
+10:39:00 [127.0.0.1] [SQL Action] Check SQL Logs
+10:39:27 [127.0.0.1] This user clicked a button they were not suppose to.
+10:40:28 [127.0.0.1] User Agent Values:
+10:40:28 [127.0.0.1]    agent_name = Chrome
+10:40:28 [127.0.0.1]    agent_version = 54.0.2840.99
+10:40:28 [127.0.0.1]    os_type = Windows
+10:40:28 [127.0.0.1]    os_name = Windows 10
+10:40:28 [127.0.0.1] No input submitted
+10:40:28 [127.0.0.1] Array Values:
+10:40:28 [127.0.0.1]    Web = Brandon
+10:40:28 [127.0.0.1]    Boss = Daniel
+10:40:28 [127.0.0.1]    Designer = Jessica
+10:40:28 [127.0.0.1]    Writer = Sarah
+10:40:28 [127.0.0.1]    Designer2 = Anthony
+10:40:28 [127.0.0.1] [WARN] This is a normal Error!
+10:40:28 [127.0.0.1] [SQL Action] Check SQL Logs
+10:40:34 [127.0.0.1] This user clicked a button they were not suppose to.
+10:40:35 [127.0.0.1] This user clicked a button they were not suppose to.
+10:40:36 [127.0.0.1] This user clicked a button they were not suppose to.
+10:40:37 [127.0.0.1] User Agent Values:
+10:40:37 [127.0.0.1]    agent_name = Chrome
+10:40:37 [127.0.0.1]    agent_version = 54.0.2840.99
+10:40:37 [127.0.0.1]    os_type = Windows
+10:40:37 [127.0.0.1]    os_name = Windows 10
+10:40:37 [127.0.0.1] POST Values:
+10:40:37 [127.0.0.1]    fName = 
+10:40:37 [127.0.0.1]    X_test_text = 
+10:40:37 [127.0.0.1]    CCnum = ****
+10:40:37 [127.0.0.1]    countries = Aruba
+10:40:37 [127.0.0.1]    submit = submit
+10:40:37 [127.0.0.1] Array Values:
+10:40:37 [127.0.0.1]    Web = Brandon
+10:40:37 [127.0.0.1]    Boss = Daniel
+10:40:37 [127.0.0.1]    Designer = Jessica
+10:40:37 [127.0.0.1]    Writer = Sarah
+10:40:37 [127.0.0.1]    Designer2 = Anthony
+10:40:37 [127.0.0.1] [WARN] This is a normal Error!
+10:40:37 [127.0.0.1] [SQL Action] Check SQL Logs
+10:40:37 [127.0.0.1] User Agent Values:
+10:40:37 [127.0.0.1]    agent_name = Chrome
+10:40:37 [127.0.0.1]    agent_version = 54.0.2840.99
+10:40:37 [127.0.0.1]    os_type = Windows
+10:40:37 [127.0.0.1]    os_name = Windows 10
+10:40:37 [127.0.0.1] POST Values:
+10:40:37 [127.0.0.1]    fName = 
+10:40:37 [127.0.0.1]    X_test_text = 
+10:40:37 [127.0.0.1]    CCnum = ****
+10:40:37 [127.0.0.1]    countries = Aruba
+10:40:37 [127.0.0.1]    submit = submit
+10:40:37 [127.0.0.1] Array Values:
+10:40:37 [127.0.0.1]    Web = Brandon
+10:40:37 [127.0.0.1]    Boss = Daniel
+10:40:37 [127.0.0.1]    Designer = Jessica
+10:40:37 [127.0.0.1]    Writer = Sarah
+10:40:37 [127.0.0.1]    Designer2 = Anthony
+10:40:37 [127.0.0.1] [WARN] This is a normal Error!
+10:40:37 [127.0.0.1] [SQL Action] Check SQL Logs
