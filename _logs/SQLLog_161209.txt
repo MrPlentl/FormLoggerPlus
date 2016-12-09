@@ -1,4 +1,1 @@
 SELECT * FROM mytable where field=7
-SELECT * FROM mytable where field=7
-SELECT * FROM mytable where field=7
-SELECT * FROM mytable where field=7
