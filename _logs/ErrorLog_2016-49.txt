@@ -1,1 +1,0 @@
-Fri 09 15:16:04 [127.0.0.1] [WARN] This is a normal Error!
