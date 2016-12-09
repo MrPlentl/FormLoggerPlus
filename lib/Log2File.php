@@ -1,19 +1,20 @@
 <?php
 /*************************************************************
-* File:            log2file.php
-* Function:        Contains all of the Logging info and functions to create logs
-* Author:          Brandon Plentl (bp)
-* Environment:     PhpStorm - Windows 10
-* Code Cleaned:    11/07/16 - Started
-* Code Validated:  11/07/16 - Working
-* Code Updated:    11/07/16 - Working
-* Notes:
-* Revisions:       1.00  05/07/15 (bp) First Release
+ * File:            Log2File.php
+ * Function:        Contains all of the Logging info and functions to create logs
+ * Author:          Brandon Plentl (bp)
+ * Environment:     PhpStorm - Windows 10
+ * Code Cleaned:    12/07/16 - Started
+ * Code Validated:  12/07/16 - Working
+ * Code Updated:    12/07/16 - Working
+ * Notes:
+ * Revisions:       1.00  05/07/15 (bp) First Release
+ *                  2.00  12/09/16 (bp) Converted this into a Composer Library
 *************************************************************/
 
 namespace FormLoggerPlus;
 
-require_once("__config.php");
+require_once(__DIR__ . "/../__config.php");
 ### Included in log2file_config.php
 //define("Log_Path",              "./_logz");
 //define("Sql_Log_Path",          "./_logz");
@@ -337,4 +338,5 @@ class Log2File
         }
     }
 }
+
 ?>

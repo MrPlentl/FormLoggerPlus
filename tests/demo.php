@@ -1,28 +1,21 @@
 <?php
 /*************************************************************
-* File:        tester.php   
-* Current Ver:     
-* Function:       
-* Author:         Brandon Plentl (bp)
-* Environment:    PhpStorm - Windows 7
-* Code Cleaned:   
-* Code Validated: 
-* Notes:          
-* Fixes Needed:	  
-* Revisions:      
-*************************************************************/
+ * File:            demo.php
+ * Function:        A basic demo of the FormLoggerPlus controls
+ * Author:          Brandon Plentl (bp)
+ * Environment:     PhpStorm - Windows 10
+ * Code Cleaned:    12/07/16 - Started
+ * Code Validated:  12/07/16 - Working
+ * Code Updated:    12/07/16 - Working
+ * Notes:
+ * Revisions:       1.00  05/07/15 (bp) First Release
+ *                  2.00  12/09/16 (bp) Converted this into a Composer Library
+ *************************************************************/
 
 require_once(__DIR__ . "/../vendor/autoload.php");   // Contains all the main logging functions
-
 use FormLoggerPlus\Log2File;
 
 $log = new Log2File();
-
-//$mail = new mail();
-//$mail->send_error_email("Last Test","This is the last test to Webmaster");
-//echo "Writing Log File - LogUserAgent";
-//$log->LogUserAgent();
-//$log->History("Here is my log entry");
 
 $log->LogUserAgent();
 
@@ -42,6 +35,8 @@ $log->Trace(1);
 <head>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="../lib/ajax_log2file.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <div id="div1"></div>
@@ -66,16 +61,6 @@ $log->Trace(1);
     <input type="submit" id="submit" name="submit" value="submit" />
 </form>
 <?php $log->Trace(5); ?>
-<script type="text/javascript">
-    //    $( "input[type=text]" ).blur(function(){
-    //        var log;
-    //        log = "LOGGING" + $(this).attr('id') + " = " + $(this).val();
-    //        alert(log);
-    //    });
-
-    //$( "input[type=button]" ).click(function(){ alert("Button Clicked: "+$(this).val()); });
-</script>
-<?php $log->Trace(6); ?>
 </body>
 </html>
  
