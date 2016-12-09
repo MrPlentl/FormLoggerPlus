@@ -1,3 +1,4 @@
 .idea
 _logs
 vendor
+composer.lock
