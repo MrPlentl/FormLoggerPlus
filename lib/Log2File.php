@@ -1,39 +1,42 @@
 <?php
 /*************************************************************
- * File:            Log2File.php
- * Function:        Contains all of the Logging info and functions to create logs
+ * File:            Log2File.class.php
+ * Current Ver:     2.01
+ * Function:        Contains all of the Logging info and methods to create logs
  * Author:          Brandon Plentl (bp)
- * Environment:     PhpStorm - Windows 10
- * Code Cleaned:    12/07/16 - Started
- * Code Validated:  12/07/16 - Working
- * Code Updated:    12/07/16 - Working
- * Notes:
+ * Environment:     PhpStorm 2017.2 - Windows 10
+ * Code Cleaned:    07/28/17 - Completed
+ * Code Validated:  07/28/17 - Working
+ * Code Updated:    07/28/17 - Working
+ * Notes:           This Class was built for quick easy logging. Setup your config and learn the Methods available and you will be good to go.
  * Revisions:       1.00  05/07/15 (bp) First Release
- *                  2.00  12/09/16 (bp) Converted this into a Composer Library
+ *                  2.01  07/28/17 (bp) Second and Expected Final Release of this basic file logger
 *************************************************************/
 
 namespace FormLoggerPlus;
-
 require_once(__DIR__ . "/../__config.php");
-### Included in log2file_config.php
-//define("Log_Path",              "./_logz");
-//define("Sql_Log_Path",          "./_logz");
-//define("Usertrack_Log_Path",    "./_logz/usertracks");
-//define("Util_Log_Path",         "./_logz");
-//define("TraceMode",             1);	          //0: Trace() deactivated; 1: Trace() activiated
-//define("Usertrack_Available",   1);	          //0: Trace() deactivated; 1: Trace() activiated
 
+### Included in __config.php - Out of the box, the _logs folder will appear in the top level root directory
 
-# Method List ###
-// function History( $item );
-// function UtilLog( $item );
-// function LogInput();
-// function LogServerInfo();
-// function Trace( $item );
-// SQLHistoryLog( $SqlScript );
-// function ErrorLog ( $item, $logSessionInfo=FALSE );
-// function ErrorSessionLog();
-// function send_error_notification()
+### Available Method List YOU will Use To Log ###
+// function History( $item );   ### The actual call to write to the daily log -
+//                                  Use this for High Level tracking
+// function UtilLog( $item );   ### Gives the logging ability for Commandline Utility Scripts/Programs;
+//                                  Not meant to be used from the Browser
+// function DumpArrayToLog()    ### It will print out the given array keys and values to a log.
+//                                  Just call the method with the array submitted
+// function LogInput();         ### Will dump any and all $_POST and/or $_GET values; there are a few custom checks in here,
+//                                  for instance, fields with CCnum will export a credit card number and only print the last 4 digits
+// function Trace( $item );     ### This is a log function where you can go overboard and Add the trace function everywhere.
+//                                  When turned on, extensive logging will take place, so use this for testing and not everyday debugging.
+// SQLHistoryLog( $SqlScript ); ### This is just a separate log file for SQL transactions.
+//                                  Normally this is for INSERTS and UPDATES
+
+// function ErrorLog ( $item, $logSessionInfo=FALSE );  ### Writes to a separate log file labeled ErrorLog;
+//                                                          All errors also write to the main History Log
+// function ErrorSessionLog();                          ### This is pretty much identical to the LogInput() method except it dumps to the Error log instead.
+//                                                             Meant for when errors occur.
+
 
 class Log2File
 {
@@ -68,7 +71,11 @@ class Log2File
         // The Collect All history log. Every log call will be written to this file
         $filePathGen  = sprintf("%s/HistoryLog_%s.txt", Log_Path, date("ymd") );   // Log_Path defined in log2file_config.php
         $file_res = fopen($filePathGen, "a");
-        fwrite($file_res, sprintf("%s [%s] %s\r\n", date("H:i:s"), $_SERVER['REMOTE_ADDR'], $item));
+
+        // In the case that you might be running localhost, REMOTE_ADDR returns ::1 and causes issues
+        $ip_address = (!isset($_SERVER['REMOTE_ADDR']) || $_SERVER['REMOTE_ADDR'] == '::1') ? "127.0.0.1" : $_SERVER['REMOTE_ADDR'];
+
+        fwrite($file_res, sprintf("%s [%s] %s\r\n", date("H:i:s"), $ip_address, $item));
         fclose($file_res);
 
         // If available, add the History note item to the Usertrack log as well
@@ -77,15 +84,20 @@ class Log2File
         }
     }
 
-    ### Usertrack_Log() creates a daily for each user
+    ### Usertrack_Log() creates a daily log for each user
     public function Usertrack_Log( $item )
     {
         // Make Log Directory
         if (file_exists(Usertrack_Log_Path) == FALSE) {
             mkdir(Usertrack_Log_Path, 0700, TRUE);
         }
+
+        // In the case that you might be running localhost, REMOTE_ADDR returns ::1 and causes issues
+        $ip_address = (!isset($_SERVER['REMOTE_ADDR']) || $_SERVER['REMOTE_ADDR'] == '::1') ? "127.0.0.1" : $_SERVER['REMOTE_ADDR'];
+
         // The Collect All history log. Every log call will be written to this file
-        $filePathGen  = sprintf("%s/%s_%s.txt", Usertrack_Log_Path, $_SERVER['REMOTE_ADDR'], date("ymd") );   // File Name Example: 127.0.0.1_140919.txt
+        $filePathGen  = sprintf("%s/%s_%s.txt", Usertrack_Log_Path, $ip_address, date("ymd") );   // File Name Example: 127.0.0.1_140919.txt
+
         $file_res = fopen($filePathGen, "a");
         fwrite($file_res, sprintf("%s %s\r\n", date("H:i:s"), $item));   // 11:42:34 This is an item to log
         fclose($file_res);
@@ -104,7 +116,11 @@ class Log2File
 
         $filePathGen  = sprintf("%s/ErrorLog_%s.txt", Log_Path, date("Y") . "-" . date("W"));   // THis is currently a WEEKLY Log file
         $file_res = fopen($filePathGen, "a");
-        fwrite($file_res, sprintf("%s [%s] %s %s\r\n", date("D d H:i:s"), $_SERVER['REMOTE_ADDR'], $error_level, $item));
+
+        // In the case that you might be running localhost, REMOTE_ADDR returns ::1 and causes issues
+        $ip_address = (!isset($_SERVER['REMOTE_ADDR']) || $_SERVER['REMOTE_ADDR'] == '::1') ? "127.0.0.1" : $_SERVER['REMOTE_ADDR'];
+
+        fwrite($file_res, sprintf("%s [%s] %s %s\r\n", date("D d H:i:s"), $ip_address, $error_level, $item));
         fclose($file_res);
 
         // Write entry to History Log
@@ -133,8 +149,8 @@ class Log2File
     ### LogUserAgent() uses a third party to detect information about the user from the the User Agent string
     public function LogUserAgent() {
         $UserAgentURL = "useragentstring.com";   // This is the URL to the free service at useragentstring.com that reads in the User Agent Sting and parses the information; I currently only request the following: agent_name-agent_version-os_type-os_name
-        // Check Connection
-        if( ! fsockopen( $UserAgentURL, 80,$error_num,$error_str,2 ) ) {
+        // Check Connection, but move on after 2 seconds
+        if( !fsockopen( $UserAgentURL, 80,$error_num,$error_str,2 ) ) {
             $this->ErrorLog("User Agent Values:  Unable to Log User Agent Information due to a connection error with " . $UserAgentURL . ". Error while executing: " . __METHOD__ ."() " . $error_num . " - " . $error_str, "[ERROR]");
         } else {
             $url = "http://" . $UserAgentURL . "/?uas=" . $_SERVER['HTTP_USER_AGENT'] . "&getJSON=agent_name-agent_version-os_type-os_name";
@@ -144,13 +160,13 @@ class Log2File
             $contents = utf8_encode($contents);
             $results = json_decode($contents, true);
 
-// EXAMPLE RETURN
-//             {
-//                "agent_name": "Chrome",
-//                "agent_version": "37.0.2062.120",
-//                "os_type": "Windows",
-//                "os_name": "Windows 7"
-//             }
+            // EXAMPLE RETURN
+            //      {
+            //         "agent_name": "Chrome",
+            //         "agent_version": "37.0.2062.120",
+            //         "os_type": "Windows",
+            //         "os_name": "Windows 7"
+            //      }
 
             // Loop through and print out info
             $this->History("User Agent Values:");
@@ -338,5 +354,3 @@ class Log2File
         }
     }
 }
-
-?>
