@@ -19,6 +19,7 @@ define("Log_Path",              __DIR__ . "../../../../_logs");					// General L
 define("Sql_Log_Path",          __DIR__ . "../../../../_logs");					// This is just for the separate log file for SQL transactions. Normally this is for INSERTS and UPDATES
 define("Usertrack_Log_Path",    __DIR__ . "../../../../_logs/usertracks");	// Usertrack_Log() creates a daily log for each user
 define("Util_Log_Path",         __DIR__ . "../../../../_logs");					// UtilLog() gives the logging ability for Commandline Utility Scripts/Programs; Not meant to be used from the Browser
+define("JS_DIR_Path",           __DIR__ . "../../../../public/js");					//
 
 ### Special Features ###
 // Trace Mode is great for expansive logging that you might want to turn on and off from time to time without writing and deleting code
