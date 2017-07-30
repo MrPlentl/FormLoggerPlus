@@ -13,7 +13,7 @@
  *                  2.01  07/28/17 (bp) Second and Expected Final Release of this basic file logger
  *************************************************************/
 
-require_once(__DIR__ . "/../vendor/autoload.php");   // Contains all the main logging functions
+require_once(__DIR__ . "/../../../vendor/autoload.php");   // Contains all the main logging functions
 
 use FormLoggerPlus\Log2File;
 
