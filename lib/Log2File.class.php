@@ -42,28 +42,24 @@ class Log2File
 {
     function __construct()
     {
-        // 1) Check if \public\js\form-logger-plus\ajax_log2file.js exists
-        //                           and ajax_log2file_response.php exists
-
-        // Make Log Directory
-        if (file_exists(JS_DIR_Path . "/form-logger-plus/") == FALSE) {
+        // Validating that the Public facing project JavaScript directory and needed files exists
+        // This is needed for the real time AJAX logging
+        // JS_DIR_Path defined in the __config
+        if ( ! file_exists(JS_DIR_Path . "/form-logger-plus/") ) {
             mkdir(JS_DIR_Path . "/form-logger-plus/", 0700, TRUE);   // Log_Path defined in log2file_config.php
-
+        } else if (! file_exists(JS_DIR_Path . "/form-logger-plus/ajax_log2file.js") || ! file_exists(JS_DIR_Path . "/form-logger-plus/ajax_log2file_response.php")) {
             $file = __DIR__ . '/ajax_log2file.js';
             $newfile = JS_DIR_Path . '/form-logger-plus/ajax_log2file.js';
-            if (!copy($file, $newfile)) {
-                echo "ERROR: failed to copy $file...\n";
-            }
+            if (!copy($file, $newfile)) { echo "ERROR: failed to copy $file...\n"; }
 
             $file = __DIR__ . '/ajax_log2file_response.php';
             $newfile = JS_DIR_Path . '/form-logger-plus/ajax_log2file_response.php';
-            if (!copy($file, $newfile)) {
-                echo "ERROR: failed to copy $file...\n";
-            }
+            if (!copy($file, $newfile)) { echo "ERROR: failed to copy $file...\n"; }
+
+            $file = __DIR__ . '/README.txt';
+            $newfile = JS_DIR_Path . '/form-logger-plus/README.txt';
+            if (!copy($file, $newfile)) { echo "ERROR: failed to copy $file...\n"; }
         }
-
-        // 2) If Not, create the Directories and copy files
-
     }
 
     protected function Create_htaccess()
