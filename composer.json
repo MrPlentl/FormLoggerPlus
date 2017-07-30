@@ -3,8 +3,7 @@
     "description": "Sometimes I just need a File Logging Solution, and this is my personal take on it. The best part about this logger is that it tracks user interactions with Form Elements without any configuration.",
     "type": "library",
     "require": {
-        "swiftmailer/swiftmailer": "^5.4",
-        "php": ">=5.3.6"
+        "php": ">=5.5"
     },
     "autoload": {
         "psr-4": {
