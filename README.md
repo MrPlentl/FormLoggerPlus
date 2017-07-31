@@ -19,8 +19,9 @@ Quick Setup
 Make sure you have your autoloader required at the top of your PHP file and add the FormLoggerPlus\Log2File namespace.
 * `require_once(__DIR__ . "/../vendor/autoload.php");`   // NOT using Laravel? Make sure to require the autoloader... Contains all the main logging functions
 * `use FormLoggerPlus\Log2File;`   // Make sure to add the Namespace to the top of the files you want to use it with
+* NOTE: jQuery is REQUIRED for the front end logging and MUST BE loaded before the following ajax_log2file.js
+* `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>`
 * `<script src="/js/form-logger-plus/ajax_log2file.js"></script>`  // The files will be auto-generated, just add this to your HEAD
-* NOTE: jQuery is REQUIRED for the front end logging
 * HINT: There is a demo.php file included that will let you play with the functionality as well. Just move it to your public web root directory
 
 Quick Start
