@@ -1,7 +1,7 @@
 FileLoggerPlus
 =====================
-### Cause sometimes you just need a quick and easy File Logging Solution
-The main purpose of this package is to LOG not just from the server side, but also from the client side, but more so especially when using forms. As the user fills out a form and they move from input to input, the FileLogger will write the field data/value to the log file.
+### Cause sometimes you just need a quick and easy File Logging Solution - Originally Built for Laravel users
+The main purpose of this package is to LOG to a file not just from the server side, but also from the client side, but more so especially when using forms. As the user fills out a form and they move from input to input, the FileLogger will write the field data/value to the log file.
 
 Features
 ---
@@ -17,8 +17,8 @@ Quick Setup
 `composer require mrplentl/form-logger-plus`
 
 Make sure you have your autoloader required at the top of your PHP file and add the FormLoggerPlus\Log2File namespace.
-* `require_once(__DIR__ . "/../vendor/autoload.php");`   // Contains all the main logging functions
-* `use FormLoggerPlus\Log2File;`
+* `require_once(__DIR__ . "/../vendor/autoload.php");`   // NOT using Laravel? Make sure to require the autoloader... Contains all the main logging functions
+* `use FormLoggerPlus\Log2File;`   // Make sure to add the Namespace to the top of the files you want to use it with
 * `<script src="/js/form-logger-plus/ajax_log2file.js"></script>`  // The files will be auto-generated, just add this to your HEAD
 * NOTE: jQuery is REQUIRED for the front end logging
 * HINT: There is a demo.php file included that will let you play with the functionality as well. Just move it to your public web root directory
