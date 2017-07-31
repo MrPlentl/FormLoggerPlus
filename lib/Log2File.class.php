@@ -11,6 +11,7 @@
  * Notes:           This Class was built for quick easy logging. Setup your config and learn the Methods available and you will be good to go.
  * Revisions:       1.00  05/07/15 (bp) First Release
  *                  2.01  07/28/17 (bp) Second and Expected Final Release of this basic file logger
+ *                  2.02  07/31/17 (bp) Fixed an issue with the logic in the constructor that wasn't moving the js files on the first load
 *************************************************************/
 
 namespace FormLoggerPlus;
@@ -45,10 +46,13 @@ class Log2File
         // Validating that the Public facing project JavaScript directory and needed files exists
         // This is needed for the real time AJAX logging
         // JS_DIR_Path defined in the __config
-        if ( ! file_exists(JS_DIR_Path . "/form-logger-plus/") ) {
-            mkdir(JS_DIR_Path . "/form-logger-plus/", 0700, TRUE);   // Log_Path defined in log2file_config.php
-        } else if (! file_exists(JS_DIR_Path . "/form-logger-plus/ajax_log2file.js") || ! file_exists(JS_DIR_Path . "/form-logger-plus/ajax_log2file_response.php")) {
-            $file = __DIR__ . '/ajax_log2file.js';
+		if (! file_exists(JS_DIR_Path . "/form-logger-plus/ajax_log2file.js") || ! file_exists(JS_DIR_Path . "/form-logger-plus/ajax_log2file_response.php")) 
+		{
+			if ( ! file_exists(JS_DIR_Path . "/form-logger-plus/") ) {
+				mkdir(JS_DIR_Path . "/form-logger-plus/", 0700, TRUE);   // Log_Path defined in log2file_config.php
+			}
+			
+			$file = __DIR__ . '/ajax_log2file.js';
             $newfile = JS_DIR_Path . '/form-logger-plus/ajax_log2file.js';
             if (!copy($file, $newfile)) { echo "ERROR: failed to copy $file...\n"; }
 
